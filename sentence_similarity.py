@@ -55,8 +55,8 @@ for index,row in df.iterrows():
     sentence_similarity.append(sorted(one_similarity.items(),key = lambda item:item[1],reverse=True))
 
 ##保存
-outfile = open('%s.out' % filename, 'w')
+fileObject = open('match_sim.200', 'w')
 for ip in sentence_similarity:
-    outfile.write(str(ip))
-    outfile.write('\n')
-outfile.close()
+    fileObject.write(str(ip))
+    fileObject.write('\n')
+fileObject.close()
