@@ -55,7 +55,7 @@ for index,row in df.iterrows():
     sentence_similarity.append(sorted(one_similarity.items(),key = lambda item:item[1],reverse=True))
 
 ##保存
-fileObject = open('similarity1.txt', 'w')
+fileObject = open('match_sim.200', 'w')
 for ip in sentence_similarity:
     fileObject.write(str(ip))
     fileObject.write('\n')
