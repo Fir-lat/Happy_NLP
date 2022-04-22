@@ -3,7 +3,7 @@ import numpy as np
 from nltk.tokenize import RegexpTokenizer
 
 # 这里将之前爬取的csv文件转化成为txt文件（和直接读取txt文件效果是一样的）
-FILE_PATH = 'data1_movie.csv'
+FILE_PATH = 'E:\大三下\CIS\科研\data1_movie.csv'
 df = pd.read_csv(FILE_PATH)
 tokenizer = RegexpTokenizer(r'\w+')
 stopwords = [['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', 'couldn', 'didn', 'doesn', 'hadn', 'hasn', 'haven', 'isn', 'ma', 'mightn', 'mustn', 'needn', 'shan', 'shouldn', 'wasn', 'weren', 'won', 'wouldn']]
@@ -55,7 +55,7 @@ for index,row in df.iterrows():
     sentence_similarity.append(sorted(one_similarity.items(),key = lambda item:item[1],reverse=True))
 
 ##保存
-fileObject = open('match_sim.200', 'w')
+fileObject = open('E:/similarity1.txt', 'w')
 for ip in sentence_similarity:
     fileObject.write(str(ip))
     fileObject.write('\n')
